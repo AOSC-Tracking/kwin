@@ -3,6 +3,8 @@ Description=KDE Wayland Compositor
 PartOf=graphical-session.target
 
 [Service]
+# LoongGPU device quirks.
+EnvironmentFile=-/etc/conf.d/kwin_wayland-loonggpu-quirks
 ExecStart=@CMAKE_INSTALL_FULL_BINDIR@/kwin_wayland_wrapper --xwayland
 BusName=org.kde.KWinWrapper
 Slice=session.slice
